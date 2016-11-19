@@ -37,7 +37,7 @@ function formatTime(createTime){
     var DAY = HOUR * 24;
 
     if(division < MINUTE){
-        return division + " sec";
+        return division / 1000 + " sec";
     }
 
     if(division < HOUR){
