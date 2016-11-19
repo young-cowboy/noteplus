@@ -1,4 +1,26 @@
 <style lang="less">
+    ::-webkit-scrollbar {
+        width: 5px;
+        height: 5px;
+    }
+    ::-webkit-scrollbar-button {
+        width: 0;
+        height: 0;
+    }
+    ::-webkit-scrollbar-corner {
+        display: block;
+    }
+    ::-webkit-scrollbar-track, ::-webkit-scrollbar-thumb {
+        border-right: 1px solid transparent;
+        border-left: 1px solid transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: rgba(0,0,0,0.2);
+    }
+    .wrap{
+        height: 100%;
+        overflow-y: auto;
+    }
     .list-item{
         display: flex;
         flex-direction: row;
@@ -127,10 +149,15 @@
             cursor: pointer;
         }
     }
+
+    .note-list{
+        line-height: 1.8;
+        font-size: 16px;
+    }
 </style>
 <template>
-    <div>
-        <ul>
+    <div class="wrap">
+        <ul v-if="list.length > 0">
             <li v-for="(index, item) in list" class="list-item">
                 <div class="info">
                     <span class="date" v-if="item.createTime">{{item.createTime | filterTime}}</span>
@@ -142,6 +169,17 @@
                 </div>
             </li>
         </ul>
+        <div v-if="list.length == 0">
+            <ul class="note-list">
+                <li>1. Select a text on the web page.</li>
+                <li>2. Click right mouse button and click "Save into Noteplus" option on the right click menu.</li>
+                <li><img src="/assets/image/intro_1.png"></li>
+                <li>3. You can see the text that you just "Save into Noteplus" in the Chrome Extension popup page. </li>
+                <li><img src="/assets/image/intro_2.png"></li>
+                <li>4. Just have fun and manager your note.</li>
+                <li><img src="/assets/image/intro_3.png"></li>
+            </ul>
+        </div>
         <div class="detail-wrap" v-if="showDetail">
             <div class="detail">
                 <span class="close-btn" @click="close">&#xe61e;</span>

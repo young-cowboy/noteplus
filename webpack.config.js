@@ -1,6 +1,7 @@
 var webpack = require('webpack');
 var vue = require('vue-loader')
-var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('common.js');
+var co
+monsPlugin = new webpack.optimize.CommonsChunkPlugin('common.js');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
  
 module.exports = {
