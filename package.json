@@ -5,7 +5,8 @@
   "main": "webpack.config.js",
   "scripts": {
     "dev": "webpack --watch -d",
-    "publish": "webpack -d -p --progress"
+    "publish": "webpack -d -p --progress && npm run cp",
+    "cp" : "cp -r assets noteplus_crx && cp -r libs noteplus_crx && cp -r dist noteplus_crx && cp -r pages noteplus_crx && cp manifest.json noteplus_crx"
   },
   "author": "",
   "license": "ISC",

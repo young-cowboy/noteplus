@@ -37,15 +37,15 @@ function formatTime(createTime){
     var DAY = HOUR * 24;
 
     if(division < MINUTE){
-        return division + "sec";
+        return division + " sec";
     }
 
     if(division < HOUR){
-        return Math.floor(division / MINUTE) + "min";
+        return Math.floor(division / MINUTE) + " min";
     }
 
     if(division < DAY){
-        return Math.floor(division / HOUR) + "hour"
+        return Math.floor(division / HOUR) + " hour"
     }
 
     return _formatDate(createTime);

@@ -4,16 +4,16 @@
         flex-direction: row;
         justify-content: space-between;
         font-size: 14px;
-        margin-bottom: 2px;
-        padding: 3px;
+        padding: 5px;
+        border-bottom: 1px solid #eee;
 
         &:last-child{
             margin-bottom: 0px;
+            border-bottom: 0;
         }
 
         &:hover{
             background-color: rgba(0, 0, 0, 0.1);
-            border-radius: 3px;
         }
         
         .info, .handler{
@@ -32,7 +32,6 @@
             text-align: center;
             border-radius: 3px;
             background-color: #5cb85c;
-            margin-left: 5px;
             margin-right: 5px;
         }
         .text{
